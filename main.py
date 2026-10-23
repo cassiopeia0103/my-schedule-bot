@@ -19,7 +19,8 @@ from parser import (
 )
 
 # ==== НАСТРОЙКИ ====
-TOKEN = "8863468904:AAEqkcPAtJws0Stk34uzKQsvOGhZtS6qdbg"
+import os
+TOKEN = os.environ.get("8863468904:AAHo-cdcry5A0PZEtBz5wjLxp0nsYQrBHJA")
 # ====================
 
 logging.basicConfig(level=logging.INFO)
