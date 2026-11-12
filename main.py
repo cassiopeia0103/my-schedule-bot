@@ -64,9 +64,19 @@ async def send_daily_schedule():
 @dp.message(Command("start"))
 async def cmd_start(message: Message):
     await message.answer(
-        "👋 Привет! Я бот с расписанием группы <b>НК9-721</b> 🎓\n\n"
-        "Теперь я умею присылать расписание каждое утро в 06:30!\n"
-        "Нажми <b>🔔 Вкл. рассылку</b>, чтобы подписаться.",
+        "Привет! Я бот с расписанием группы <b>НК9-721</b> 🤍\n"
+        "\n"
+        "Что я умею:\n"
+	    "‧₊˚  <b>Сегодня</b> — пары на сегодня\n"
+	        "₊˚    <b>Завтра</b> — пары на завтра\n"
+	    "✩     <b>Вся неделя</b> — всё расписание\n"
+	    "⊹♡    <b>Пн–Сб</b> — конкретный день\n"
+	    "🔄    <b>Обновить</b> — загрузить с сайта\n"
+        "\n"
+	    "<b> NEW: </b> Теперь умею присылать расписание каждое утро в 06:30\n"
+	    "\n"
+        "Данные беру с edu.tgpi.ru \n"
+        "Если что-то не работает — напиши @llzok",
         reply_markup=main_kb,
         parse_mode="HTML",
     )
@@ -78,9 +88,9 @@ async def subscribe(message: Message):
     if user_id not in subs:
         subs.append(user_id)
         save_subs(subs)
-        await message.answer("✅ Ты подписан на утреннюю рассылку в 06:30!")
+        await message.answer("✅ Рассылка в 6:30 активна")
     else:
-        await message.answer("Ты уже подписан 😉")
+        await message.answer("Рассылка уже работает 🤍")
 
 @dp.message(F.text == "🔕 Выкл. рассылку")
 async def unsubscribe(message: Message):
@@ -89,9 +99,9 @@ async def unsubscribe(message: Message):
     if user_id in subs:
         subs.remove(user_id)
         save_subs(subs)
-        await message.answer("❌ Рассылка отключена.")
+        await message.answer("❌ Рассылка отключена")
     else:
-        await message.answer("Ты и так не подписан.")
+        await message.answer("Рассылка не активна")
 
 def _split(text: str, size: int = 4000):
     for i in range(0, len(text), size):
