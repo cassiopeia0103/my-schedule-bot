@@ -10,7 +10,7 @@ from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from parser import get_schedule, format_today, format_tomorrow, format_all, format_weekday, WEEKDAYS_SHORT
 
 # ==== НАСТРОЙКИ ====
-TOKEN = "ТВОЙ_ТОКЕН_ТУТ" # Оставь тот токен, который у тебя был
+TOKEN = "8863468904:AAE25Bi-k5Fbq7bzJMey_aPP2vyRqIs7WjA" # Оставь тот токен, который у тебя был
 # ====================
 
 logging.basicConfig(level=logging.INFO)
